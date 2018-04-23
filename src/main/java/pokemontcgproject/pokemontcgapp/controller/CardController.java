@@ -25,7 +25,7 @@ public class CardController {
         return new ResponseEntity<>(allCards, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/polls/{pollId}/votes", method=RequestMethod.GET)
+    @RequestMapping(value="/cards", method=RequestMethod.GET)
     public Iterable<Card> getAllCards(@PathVariable String name) {
         return pokemonCardRepository.findCardsByName(name);
     }
