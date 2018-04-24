@@ -26,9 +26,6 @@ public class PokemonTCGApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-//			Quote quote = restTemplate.getForObject(
-//					"http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
-//			log.info(quote.toString());
 			Pokemon pokemon = restTemplate.getForObject(
 					"https://api.pokemontcg.io/v1/cards/xy7-54", Pokemon.class);
 			log.info(pokemon.toString());
