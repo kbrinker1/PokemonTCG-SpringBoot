@@ -1,4 +1,4 @@
-package pokemontcgproject.pokemontcgapp;
+package pokemontcgproject.pokemontcgapp.PokemonCardInfo;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -30,6 +30,13 @@ public class Card {
     public List<Weakness> weaknesses;
 
     public Card() {
+    }
+
+    public Card(String id, String name, int nationalPokedexNumber, String imageUrl) {
+        this.id = id;
+        this.name = name;
+        this.nationalPokedexNumber = nationalPokedexNumber;
+        this.imageUrl = imageUrl;
     }
 
     public String getId() {
