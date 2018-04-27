@@ -1,8 +1,6 @@
 package pokemontcgproject.pokemontcgapp.DomainCardInfo;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -29,10 +27,6 @@ public class Card {
     public String series;
     public String set;
     public String setCode;
-
-    @OneToOne
-    @JoinColumn(name = "pokemon_card")
-    private Pokemon pokemon;
 
     public Card() {
     }
@@ -162,14 +156,6 @@ public class Card {
 
     public void setSetCode(String setCode) {
         this.setCode = setCode;
-    }
-
-    public Pokemon getPokemon() {
-        return pokemon;
-    }
-
-    public void setPokemon(Pokemon pokemon) {
-        this.pokemon = pokemon;
     }
 
 

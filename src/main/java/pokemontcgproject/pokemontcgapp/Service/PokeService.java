@@ -1,6 +1,5 @@
 package pokemontcgproject.pokemontcgapp.Service;
 
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,16 +56,23 @@ public class PokeService {
 
     private Card createPokeCard (JsonNode node){
         Card pkmnCard = new Card();
-        pkmnCard.setId(node.path("id").asText());
-        pkmnCard.setName(node.path("name").asText());
-        pkmnCard.setNationalPokedexNumber(node.path("nationalPokedexNumber").asInt());
-        pkmnCard.setImageUrlHiRes(node.path("imageUrlHiRes").asText());
+            pkmnCard.setId(node.path("id").asText());
+            pkmnCard.setName(node.path("name").asText());
+            pkmnCard.setNationalPokedexNumber(node.path("nationalPokedexNumber").asInt());
+            pkmnCard.setImageUrl(node.path("imageUrl").asText());
+            pkmnCard.setImageUrlHiRes(node.path("imageUrlHiRes").asText());
+            pkmnCard.setSupertype(node.path("supertype").asText());
+            pkmnCard.setSubtype(node.path("subtype").asText());
+            pkmnCard.setEvolvesFrom(node.path("evolvesFrom").asText());
+            pkmnCard.setHp(node.path("hp").asText());
+            pkmnCard.setNumber(node.path("number").asText());
+            pkmnCard.setArtist(node.path("artist").asText());
+            pkmnCard.setRarity(node.path("rarity").asText());
+            pkmnCard.setSeries(node.path("series").asText());
+            pkmnCard.setSet(node.path("set").asText());
+            pkmnCard.setSetCode(node.path("setCode").asText());
 
         return pkmnCard;
     }
 
 }
-
-
-
-

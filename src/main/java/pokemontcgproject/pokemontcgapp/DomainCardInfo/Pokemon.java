@@ -1,7 +1,6 @@
 package pokemontcgproject.pokemontcgapp.DomainCardInfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 
 
