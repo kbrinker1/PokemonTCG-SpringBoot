@@ -1,14 +1,14 @@
-package pokemontcgproject.pokemontcgapp.PokemonCardInfo;
+package pokemontcgproject.pokemontcgapp.DomainCardInfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Resistance {
+public class Weakness {
 
     public String type;
     public String value;
 
-    public Resistance() {
+    public Weakness() {
     }
 
     public String getType() {
@@ -29,7 +29,7 @@ public class Resistance {
 
     @Override
     public String toString() {
-        return "Resistance{" +
+        return "Weakness{" +
                 "type='" + type + '\'' +
                 ", value='" + value + '\'' +
                 '}';

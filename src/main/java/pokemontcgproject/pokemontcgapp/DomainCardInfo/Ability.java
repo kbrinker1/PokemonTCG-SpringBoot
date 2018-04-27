@@ -1,4 +1,4 @@
-package pokemontcgproject.pokemontcgapp.PokemonCardInfo;
+package pokemontcgproject.pokemontcgapp.DomainCardInfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

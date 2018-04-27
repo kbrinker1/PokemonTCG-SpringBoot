@@ -1,7 +1,6 @@
-package pokemontcgproject.pokemontcgapp.PokemonCardInfo;
+package pokemontcgproject.pokemontcgapp.DomainCardInfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import pokemontcgproject.pokemontcgapp.PokemonCardInfo.Card;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
