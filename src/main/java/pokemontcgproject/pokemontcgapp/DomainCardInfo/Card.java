@@ -1,33 +1,38 @@
 package pokemontcgproject.pokemontcgapp.DomainCardInfo;
 
-import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "card")
 public class Card {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public int idCard;
 
     public String id;
     public String name;
     public int nationalPokedexNumber;
     public String imageUrl;
     public String imageUrlHiRes;
-    public List<String> types;
     public String supertype;
     public String subtype;
     public String evolvesFrom;
-    public Ability ability;
     public String hp;
-    public List<String> retreatCost;
-    public int convertedRetreatCost;
     public String number;
     public String artist;
     public String rarity;
     public String series;
     public String set;
     public String setCode;
-    public List<Attack> attacks;
-    public List<Resistance> resistances;
-    public List<Weakness> weaknesses;
+
+    @OneToOne
+    @JoinColumn(name = "pokemon_card")
+    private Pokemon pokemon;
 
     public Card() {
     }
@@ -79,14 +84,6 @@ public class Card {
         this.imageUrlHiRes = imageUrlHiRes;
     }
 
-    public List<String> getTypes() {
-        return types;
-    }
-
-    public void setTypes(List<String> types) {
-        this.types = types;
-    }
-
     public String getSupertype() {
         return supertype;
     }
@@ -111,36 +108,12 @@ public class Card {
         this.evolvesFrom = evolvesFrom;
     }
 
-    public Ability getAbility() {
-        return ability;
-    }
-
-    public void setAbility(Ability ability) {
-        this.ability = ability;
-    }
-
     public String getHp() {
         return hp;
     }
 
     public void setHp(String hp) {
         this.hp = hp;
-    }
-
-    public List<String> getRetreatCost() {
-        return retreatCost;
-    }
-
-    public void setRetreatCost(List<String> retreatCost) {
-        this.retreatCost = retreatCost;
-    }
-
-    public int getConvertedRetreatCost() {
-        return convertedRetreatCost;
-    }
-
-    public void setConvertedRetreatCost(int convertedRetreatCost) {
-        this.convertedRetreatCost = convertedRetreatCost;
     }
 
     public String getNumber() {
@@ -191,29 +164,14 @@ public class Card {
         this.setCode = setCode;
     }
 
-    public List<Attack> getAttacks() {
-        return attacks;
+    public Pokemon getPokemon() {
+        return pokemon;
     }
 
-    public void setAttacks(List<Attack> attacks) {
-        this.attacks = attacks;
+    public void setPokemon(Pokemon pokemon) {
+        this.pokemon = pokemon;
     }
 
-    public List<Resistance> getResistances() {
-        return resistances;
-    }
-
-    public void setResistances(List<Resistance> resistances) {
-        this.resistances = resistances;
-    }
-
-    public List<Weakness> getWeaknesses() {
-        return weaknesses;
-    }
-
-    public void setWeaknesses(List<Weakness> weaknesses) {
-        this.weaknesses = weaknesses;
-    }
 
     @Override
     public String toString() {
@@ -223,23 +181,16 @@ public class Card {
                 ", nationalPokedexNumber=" + nationalPokedexNumber +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", imageUrlHiRes='" + imageUrlHiRes + '\'' +
-                ", types=" + types +
                 ", supertype='" + supertype + '\'' +
                 ", subtype='" + subtype + '\'' +
                 ", evolvesFrom='" + evolvesFrom + '\'' +
-                ", ability=" + ability +
                 ", hp='" + hp + '\'' +
-                ", retreatCost=" + retreatCost +
-                ", convertedRetreatCost=" + convertedRetreatCost +
                 ", number='" + number + '\'' +
                 ", artist='" + artist + '\'' +
                 ", rarity='" + rarity + '\'' +
                 ", series='" + series + '\'' +
                 ", set='" + set + '\'' +
                 ", setCode='" + setCode + '\'' +
-                ", attacks=" + attacks +
-                ", resistances=" + resistances +
-                ", weaknesses=" + weaknesses +
                 '}';
     }
 }

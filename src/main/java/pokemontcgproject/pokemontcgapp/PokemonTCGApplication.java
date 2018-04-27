@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import pokemontcgproject.pokemontcgapp.DomainCardInfo.Card;
 import pokemontcgproject.pokemontcgapp.DomainCardInfo.Pokemon;
 import pokemontcgproject.pokemontcgapp.Service.PokeService;
 
@@ -34,9 +35,9 @@ public class PokemonTCGApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			Pokemon pokemon = restTemplate.getForObject(
-					"https://api.pokemontcg.io/v1/cards/xy7-54", Pokemon.class);
-			log.info(pokemon.toString());
+			Card card = restTemplate.getForObject(
+					"https://api.pokemontcg.io/v1/cards/xy7-54", Card.class);
+			log.info(card.toString());
 
 		};
 	}
