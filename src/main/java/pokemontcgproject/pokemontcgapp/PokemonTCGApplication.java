@@ -21,6 +21,11 @@ public class PokemonTCGApplication {
 
 	}
 
+
+
+
+
+
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
