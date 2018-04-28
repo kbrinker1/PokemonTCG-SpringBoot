@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Pokemon</title>
+    <title>Pokemon:TCG </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1> Keith's Pokemon App</h1>
+<h1> Pokemon TCG Search Application</h1>
 
+    <a href="" id=lnk> </a> <br>
+    <input type='text' id='userInput' value='' />
+    <input type='button' onclick='searchCards()' value='Card Search'/>
 
+        <script>
+            function searchCards(){
+            var userInput = document.getElementById('userInput').value;
+            var lnk = document.getElementById('lnk');
+            lnk.href = "http://localhost:8080/" + userInput;
+            window.location = lnk.href;
+            }
+        </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Pokemon TCG App</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1> Pokemon Card Center </h1>-->
+<!--<h2> Please search for a card</h2>-->
+
+<!--<script>-->
+
+<!--</script>-->
+
+
+<!--</body>-->
+<!--</html>-->
